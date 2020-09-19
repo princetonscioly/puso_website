@@ -1,6 +1,6 @@
 import os
 os.system(
-    "curl \"https://docs.google.com/spreadsheets/d/1tS_AHvttsNA7WVVQjaR8Wv1kEpn-DmuzI5Ld2A0XPQc/export?gid=1088795641&format=tsv\" > team.tsv"
+    "curl -L \"https://docs.google.com/spreadsheets/d/e/2PACX-1vSuV_YsqUz46lEPdPipOH7qIs8k3Pfd0HXHcKpnD8mjJzzdw0HDH5P70YWcolEzxOH2i4RXo4w6pKag/pub?gid=1867319509&single=true&output=tsv\" > team.tsv"
 )
 
 readFile = open("team.tsv")
