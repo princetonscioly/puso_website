@@ -3,10 +3,11 @@ install.packages("scales")
 library(ggplot2)
 library(scales)
 setwd("/Users/catherineyu/Documents/PUSO/puso_website/scripts/")
-df <- read.csv("RawScoreGrid2020.csv", header=TRUE, check.names = FALSE)
+df <- read.csv("RawScoreGrid2021.csv", header=TRUE, check.names = FALSE)
 
 for (col in colnames(df)) {
-  x <- as.numeric(levels(df[,col]))[df[,col]]
+  x <- df[,col] # for 2021, stats pulled from Scilympiad
+  # x <- as.numeric(levels(df[,col]))[df[,col]] 
   plot <- ggplot(df, aes(x)) + geom_histogram(bins=9, colour="black", fill="#A4DDDF") + 
     geom_vline(aes(xintercept=mean(df[, col], na.rm=T)), color="red", linetype="dashed", size=1) + xlab("Score") + 
     ylab("Frequency") + ggtitle(col) + 
