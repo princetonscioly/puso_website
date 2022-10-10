@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    
+    <!-- Needs to be run on a server: python -m SimpleHTTPServer (#### > 1024, default 8000) -->
+    <!-- To kill existing process on port ####: sudo lsof -t -i tcp:#### | xargs kill -9 -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script> 
+      $('head').load('header.html', function() {
+        // Page-specific information
+        document.title = "Our Team - Princeton University Science Olympiad Invitational"
+        document.querySelector("#canonicalLink").setAttribute("href", "/team")
+        document.querySelector("#title_meta").setAttribute("content", "Team")
+        document.querySelector("#description").setAttribute("content", "Discover the student organizers and event supervisors who help make PUSO happen.")
+      });
+      // wrapped in function so executes after the page is loaded
+      $(function(){
+        $("nav").load("navbar.html");
+        $(".container.content").load("team-container-content.html");
+        $("footer").load("footer.html");
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- Imported navbar -->
+    <nav class="navbar navbar-inverse navbar-static-top"></nav>
+    
+    <!-- Script-generated container content -->
+    <div class="container content"></div>
+
+    <!-- Imported Footer -->
+    <footer class="footer-inverse"></footer>
+
+    <!-- Latest compiled and minified JavaScript: must load JQuery before Bootstrap -->
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/be16867854.js"></script>
+    <script>
+      $(document).ready(function(){
+        /* Hover animation for scroll-up tooltip textbox */
+        $('[data-toggle="tooltip"]').tooltip({
+          animation: true,
+          delay: {show: 25, hide: 25}
+        });
+        /* Smooth scroll for any element with id "scroll-top" */
+        $("body").on("click", "#scroll-top", function(){
+          $('html, body').animate({ scrollTop: 0 }, "250");
+        });
+        /* Smooth scroll for any link in the table of contents on team page */
+        $("body").on("click", ".table-link", function(){
+          event.preventDefault(); // Disable the link set in the href
+          var $anchor = $(this).attr('href');
+          $('html, body').animate({ scrollTop: $($anchor).offset().top }, "275");
+        });
+      })
+    </script>
+  </body>
+
+</html>
