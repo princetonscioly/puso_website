@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+      
+    <!-- Needs to be run on a server: python -m SimpleHTTPServer (#### > 1024, default 8000) -->
+    <!-- To kill existing process on port ####: sudo lsof -t -i tcp:#### | xargs kill -9 -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script> 
+      $('head').load('header.html', function() {
+        // Page-specific information
+        document.title = "Day Of - Princeton University Science Olympiad Invitational"
+        document.querySelector("#canonicalLink").setAttribute("href", "/dayof")
+        document.querySelector("#title_meta").setAttribute("content", "Tournament Information | Day Of")
+        document.querySelector("#description").setAttribute("content", "Find all of the information needed on the day of the competition.")
+      });
+      // wrapped in function so executes after the page is loaded
+      $(function(){
+        $("nav").load("navbar.html"); 
+        $("footer").load("footer.html");
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- Imported navbar -->
+    <nav class="navbar navbar-inverse navbar-static-top"></nav>
+    
+    <div class="container content">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="section-title">Day-Of Information</h1>
+          <hr>
+<!--          <p style="margin:0"><strong>Tests and keys</strong> may be found <a href="http://bit.ly/PUSO2020TestsKeys">here</a>.</p>
+          <p style="margin:0"><strong>Final Results:</strong> <a href="docs/PUSO2020_Results.pdf" target="_blank">PDF</a> | <a href="https://app.avogadro.ws/invitational/princeton-c/" target="_blank">Avogadro</a></p>
+          <p style="margin:0"><strong>Feedback:</strong> Please let us know <a href="https://bit.ly/2UCPdzL">here</a> what you thought of the tournament!</p>-->
+          <br>
+          <h5><b>Tests and keys</b> may be found <a href="https://www.dropbox.com/sh/scdwpr6qs11um6z/AAA7M7tPPQY46Nzr9G2Baep1a?dl=0">here</a></h5>
+          <h5><b>Final Results:</b> <a href="/docs/Princeton University Invitational (Div. C) 2023.pdf">PDF</a></h5>
+
+
+          <div class="table-of-contents">
+            <a href="#docs" class="table-link">Docs</a>
+            <a href="#forms" class="table-link">Forms</a>
+            <a href="#avogadro" class="table-link">Self-Scheduling</a>
+            <a href="#events" class="table-link">Event Info</a>
+            <a href="#logistics" class="table-link">Logistics</a>
+            <a href="#shirts" class="table-link">T-Shirts</a>
+            <a href="#food" class="table-link">Food</a>
+            <a href="#emergency" class="table-link">Emergency</a>
+          </div>
+
+          <h2 class="section-subtitle" id="docs">Documents <i class="fa fa-angle-up" id="scroll-top" data-toggle="tooltip" data-placement="right" title="Scroll to top" aria-hidden="true"></i></h2>
+          <ul>
+            <li><a href="docs/PUSO2023_ScheduleFinal.pdf" target="_blank">Event Schedule</a></li>
+            <li><a href="docs/PUSO2023_TeamNumbersUpdated.pdf" target="_blank">Team Numbers</a></li>
+            <li><a href="https://www.google.com/maps/d/u/1/viewer?mid=15XvymARpmVABHvknMw2ss0ZH68khA1s&ll=40.34459494699103%2C-74.65326750000001&z=15" target="_blank">Campus Map</a> </li>
+            <li><a href="docs/2023 Science Olympiad - Robertson(1-29).pdf" target="_blank">Bus Information Team 1-29</a></li>
+            <li><a href="docs/2023 Science Olympiad - DeNunzio (30-56).pdf" target="_blank">Bus Information Team 30-56</a></li>
+
+
+
+            <li><a href="docs/PUSO2023_BuildingGuide_update.pdf"> Building Guide </a></li>
+            <li>Bus Information (Coming soon!) </li>
+
+            <!-- <li><a href="docs/PUSO2020_BuildingGuide.pdf" target="_blank">Building Guide</a></li>
+            <li><a href="docs/PUSO2020_Buses.pdf" target="_blank">Bus Information</a></li> --> 
+          </ul>
+
+          <h2 class="section-subtitle" id="forms">Required Forms <i class="fa fa-angle-up" id="scroll-top" data-toggle="tooltip" data-placement="right" title="Scroll to top" aria-hidden="true"></i></h2>
+          <ul>
+            <li>Final Team List: One copy needs to be filled per team; schools sending two teams should thus fill out two copies.
+            <ul class = "sub-bullet">
+              <li><a href="docs/PUSO2023_FinalStudents.pdf" target="_blank">PDF</a> | <a href="https://docs.google.com/document/d/14Qq3eMQ41kdjN0Xrly9KuAWzAsNYbiZC/edit?usp=share_link&ouid=103868640170261648978&rtpof=true&sd=true" target="_blank">DOC</a></li>
+            </ul>
+            <li>Vandalism Policy: One copy per school.</li>
+            <ul class = "sub-bullet">
+              <li><a href="docs/PUSO2023_VandalismPolicy.pdf" target="_blank">PDF</a> | <a href="https://docs.google.com/document/d/1K5AxcxMEJ7xmrhrNgcIimR_w84C5gSj0/edit?usp=share_link&ouid=103868640170261648978&rtpof=true&sd=true" target="_blank">DOC</a></li>
+            </ul>
+            <li>Risk and Liability Waiver: Each competitor must sign this.</li>
+            <ul class = "sub-bullet">
+              <li><a href="docs/PUSO2023_LiabilityWaiver.pdf" target="_blank">PDF</a> | <a href="https://docs.google.com/document/d/1QzrcjI9CalQP5WA8YYq_Z6iagw-O5T48/edit?usp=share_link&ouid=103868640170261648978&rtpof=true&sd=true" target="_blank">DOC</a></li>
+            </ul>
+          </ul>
+
+          <h2 class="section-subtitle" id="avogadro">Build/Trial Self-Scheduling <i class="fa fa-angle-up" id="scroll-top" data-toggle="tooltip" data-placement="right" title="Scroll to top" aria-hidden="true"></i></h2>
+          <ul>
+          <li>We will be using the online system <a href="https://app.avogadro.ws/invitational/princeton-university--invitational-c/" target="_blank">Avogadro</a> to score events for the tournament as well as do build/trial event self-scheduling. If you have <b>not used Avogadro before </b> and need to make a new account, please follow our guide <a href="docs/PUSO2023_NewAvogadroGuide.pdf" target="_blank">here</a>.</li>
+          <li>Build/trial event self-scheduling has opened! Self-scheduling may only be done while logged into the coach's account on Avogadro. If you have difficulties with Avogadro, please let us know as soon as possible so that you can participate in self-schedule events. </li>
+        </ul>
+
+
+          <h2 class="section-subtitle" id="events">Event Information <i class="fa fa-angle-up" id="scroll-top" data-toggle="tooltip" data-placement="right" title="Scroll to top" aria-hidden="true"></i></h2>
+          <ul>
+            <li><b>Flight:</b> </li>
+            <ul class = "sub-bullet"> 
+              <li>The event space is roughly 30 ft high, and the floor is about 45 x 65 ft.</li>
+              <li>See a picture of the room  <a href="https://drive.google.com/file/d/1bveF7liEe7v370AbE8DffQPdj1mti0pN/view" target="_blank">here</a></li>
+            </ul>
+
+
+            <li><b>Trial Events:</b> We will be running Science Quiz Bowl. Both alternates and regular team members may compete in trial events.</li>
+              <ul class = "sub-bullet"> 
+                <li><a href="docs/Science_Quiz_Bowl_Rules.pdf" target="_blank">Science Quiz Bowl</a></li>
+                <li>The second part of Science Quiz Bowl will be held from 5:00 PM - 5:30 PM in the chapel while teams arrive for the awards ceremony. We will let the six teams who qualified know shortly after the last block.</li>
+              </ul>
+            <li><b>Reminders (as detailed on competition policies page)</b>:
+              <ul class = "sub-bullet">
+                <li>For events that differentiate content/scoring for different levels of competition, we will be following rules specified at the <b>national</b> level - except build events, which will be scored at the <b>regional</b> level.</li>
+                <li>Competitors must adhere to the code of ethics and policies outlined at <a href="https://www.soinc.org/join/policies" target="_blank">soinc.org/join/policies</a>. Please respect the event supervisors and volunteers who have dedicated their time to help out, as well as the classrooms/labs on campus. Teams will be held responsible and penalized for any misconduct.</li>
+              </ul>
+          </ul>
+
+          <h2 class="section-subtitle" id="logistics">Logistics <i class="fa fa-angle-up" id="scroll-top" data-toggle="tooltip" data-placement="right" title="Scroll to top" aria-hidden="true"></i></h2>
+          <ul>
+            <li>Team check-in is at <b><a href="https://www.google.com/maps/place/Campus+Club/@40.347571,-74.654436,17z/data=!4m12!1m6!3m5!1s0x89c3e6c379c695e1:0xfe0c497db63b0eeb!2sCampus+Club!8m2!3d40.347571!4d-74.654436!3m4!1s0x89c3e6c379c695e1:0xfe0c497db63b0eeb!8m2!3d40.347571!4d-74.654436?hl=en" target="_blank">Campus Club</a></b> from 6:00 AM - 8:15 AM.</li>
+            <ul class="sub-bullet">
+              <li>As space is limited, please leave promptly after receiving team folders and wristbands.</li>
+              <li>Competitors must wear the provided wristband in order to compete.</li>
+              <li>Each team must submit the final team roster, and a signed vandalism form + signed liability form (see "Required Forms" section above) for each competitor. Any team that fails to do so will be disqualified from competing.</li>
+            </ul>
+            <li>The awards ceremony will be held in the <b><a href="https://www.google.com/maps/place/Princeton+University+Chapel/@40.3488464,-74.6591786,17z/data=!3m1!4b1!4m5!3m4!1s0x89c3e6c3dcf18fcd:0xfafc3c4da11c4cd6!8m2!3d40.3488423!4d-74.6569899" target="_blank">Princeton University Chapel</a></b> starting at 5:30 PM. Doors will open at 4:45 PM. Please arrive in advance so that the ceremony can proceed according to schedule.</li>
+            <li>Organizer headquarters (and t-shirt sales) will be at Lewis 138.</li>
+            <li>If you have any logistical questions, here is the tournament director contact information: </li>
+            <ul class = "sub-bullet">
+              <li>Kenny Poor: 914-548-9080 or kgpoor@princeton.edu </li>
+              <li>Parker Connelly: 203-848-5254 or parkerc@princeton.edu
+              </li>
+            </ul>
+          </ul>
+
+          <h2 class="section-subtitle" id="shirts">T-Shirts <i class="fa fa-angle-up" id="scroll-top" data-toggle="tooltip" data-placement="right" title="Scroll to top" aria-hidden="true"></i></h2>
+          <ul>
+            <li>The PUSO T-shirt form is now closed. Thank you for supporting us!</li>
+            <li>We will be selling extra T-shirts during competition day ($15).</li>
+          </ul>
+         
+          <h2 class="section-subtitle" id="food">Food <i class="fa fa-angle-up" id="scroll-top" data-toggle="tooltip" data-placement="right" title="Scroll to top" aria-hidden="true"></i></h2>
+          <ul>
+            <li>The lunch box form has closed.</li>
+            <li>There are many other vendors and restaurants near campus, check the <a href="https://www.google.com/maps/d/u/1/edit?mid=15XvymARpmVABHvknMw2ss0ZH68khA1s&usp=sharing" target="_blank">campus map</a> for student favorites.</li>
+          </ul>
+
+          <h2 class="section-subtitle" id="emergency">Emergency <i class="fa fa-angle-up" id="scroll-top" data-toggle="tooltip" data-placement="right" title="Scroll to top" aria-hidden="true"></i></h2>
+          <ul>
+            <li>In the event of a emergency, call Princeton Public Safety at <a href="tel:609-258-3333">609-258-3333</a>. They will be able to contact the appropriate medical responders.</li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Imported Footer -->
+    <footer class="footer-inverse"></footer>
+
+    <!-- Latest compiled and minified JavaScript: must load JQuery before Bootstrap -->
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/be16867854.js"></script>
+    <script>
+      $(document).ready(function(){
+        /* Hover animation for scroll-up tooltip textbox */
+        $('[data-toggle="tooltip"]').tooltip({
+          animation: true,
+          delay: {show: 25, hide: 25}
+        });
+        /* Smooth scroll for any element with id "scroll-top" */
+        $("body").on("click", "#scroll-top", function(){
+          $('html, body').animate({ scrollTop: 0 }, "250");
+        });
+        /* Smooth scroll for any link in the table of contents on team page */
+        $("body").on("click", ".table-link", function(){
+          event.preventDefault(); // Disable the link set in the href
+          var $anchor = $(this).attr('href');
+          $('html, body').animate({ scrollTop: $($anchor).offset().top }, "275");
+        });
+      })
+    </script>
+  </body>
+
+</html>
